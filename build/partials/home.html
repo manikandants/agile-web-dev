@@ -4,11 +4,11 @@
 			<h1>Adder</h1>
 		</div>
 		<div class=mainContent>
-			<input id=operand1 type=number placeholder="Enter First Operand" ng-change=add() ng-model="operand1">
+			<input id=operand1 placeholder="Enter First Operand" ng-change=add() ng-model="operand1">
 			<select id=operator ng-change=add() ng-model="operator">
 				<option>+</option>
 			
-			<input id=operand2 type=number placeholder="Enter Second Operand" ng-change=add() ng-model="operand2">
+			<input id=operand2 placeholder="Enter Second Operand" ng-change=add() ng-model="operand2">
 			<label> = </label>
 			<label class=result>{{result}}</label>
 		</div>

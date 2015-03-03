@@ -1,5 +1,5 @@
-bddApp.controller('homeController',['$scope', '$http', '$location', function($scope, $http, $location){
+bddApp.controller('homeController',['$scope', '$http', '$location', 'calculatorService', function($scope, $http, $location, calculatorService){
 	$scope.add = function(){
-		$scope.result = $scope.operand1 + $scope.operand2;
+		$scope.result = calculatorService.add($scope.operand1, $scope.operand2);
 	};
 }]);

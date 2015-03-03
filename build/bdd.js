@@ -8,9 +8,9 @@ bddApp.config(['$routeProvider',function($routeProvider){
 		templateUrl : 'partials/home.html',
 		controller : 'homeController'
 	});
-}]);;bddApp.controller('homeController',['$scope', '$http', '$location', function($scope, $http, $location){
+}]);;bddApp.controller('homeController',['$scope', '$http', '$location', 'calculatorService', function($scope, $http, $location, calculatorService){
 	$scope.add = function(){
-		$scope.result = $scope.operand1 + $scope.operand2;
+		$scope.result = calculatorService.add($scope.operand1, $scope.operand2);
 	};
 }]);;/**
  * @license AngularJS v1.3.13
@@ -27130,4 +27130,11 @@ var minlengthDirective = function() {
 
 })(window, document);
 
-!window.angular.$$csp() && window.angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}</style>');
+!window.angular.$$csp() && window.angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}</style>');;bddApp.service('calculatorService', function(){
+  var add = function(operand1, operand2) {
+    return operand1 + operand2;
+  };
+  return {
+    add: add
+  };
+});
