@@ -52,4 +52,10 @@ describe('bddApp Services', function(){
 		var result = 0;
 		expect((calculatorService.add(operand1, operand2))).toBe(result);
 	}));
+	it('should return zero if two undefined parameters are added', inject(function() {
+		var operand1;
+		var operand2;
+		var result = 0;
+		expect((calculatorService.add(operand1, operand2))).toBe(result);
+	}));
 });
