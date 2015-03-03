@@ -53,7 +53,7 @@
 				},
 				src: ['www/**/*.css']
 			}
-		},
+		};
 
 		config.concat = {
 			options: {
