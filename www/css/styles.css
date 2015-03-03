@@ -1,0 +1,15 @@
+.container{
+	
+}
+.title{
+
+}
+.mainContent{
+
+}
+.result{
+	display: inline-block;
+	border: 1px solid blue;
+	height: 1em;
+	min-width: 10em;
+}

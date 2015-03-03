@@ -32,6 +32,28 @@
 				}]
 			}
 		};
+		
+		config.csslint = {
+			options: {
+				csslintrc: '.csslintrc',
+				formatters: [
+					{id: 'compact', dest: 'reports/css/compact.xml'},
+					{id: 'checkstyle-xml', dest: 'reports/css/checkstyle.xml'}
+				]
+			},
+			strict: {
+				options: {
+					import: 2
+				},
+				src: ['www/**/*.css']
+			},
+			lax: {
+				options: {
+					import: false
+				},
+				src: ['www/**/*.css']
+			}
+		},
 
 		config.concat = {
 			options: {
@@ -99,6 +121,7 @@
 
 		var tasks = [
 			'clean',
+			'csslint',
 			'karma',
 			'plato',
 			'useminPrepare',
