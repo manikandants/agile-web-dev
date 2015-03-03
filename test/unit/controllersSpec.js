@@ -1,0 +1,3 @@
+describe('bddApp Controllers', function(){
+
+});
