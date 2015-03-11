@@ -54,6 +54,15 @@
 				src: ['www/**/*.css']
 			}
 		};
+		
+		config.jscs = {
+			src: ['Gruntfile.js', 'www/**/*.js', 'test/**/*.js', '!www/js/libs/**/*.js', '!test/libs/*.js'],
+			options: {
+				config: ".jscsrc",
+				reporter: 'checkstyle',
+				reporterOutput: 'reports/jscs/checkstyle.xml'
+			}
+		};
 
 		config.concat = {
 			options: {
@@ -122,6 +131,7 @@
 		var tasks = [
 			'clean',
 			'csslint',
+			'jscs',
 			'karma',
 			'plato',
 			'useminPrepare',
