@@ -1,6 +1,6 @@
 (function () {
-   'use strict';
-   var paths = {
+	'use strict';
+	var paths = {
 		js: [
 			'*.js',
 			'Gruntfile.js',
@@ -31,7 +31,7 @@
 				}]
 			}
 		};
-        config.watch = {
+		config.watch = {
             js: {
                 files: paths.js,
                 tasks: ['jshint'],
@@ -67,7 +67,7 @@
                 }
             }
         };
-        config.concurrent = {
+		config.concurrent = {
             tasks: ['nodemon', 'watch'],
             options: {
                 logConcurrentOutput: true

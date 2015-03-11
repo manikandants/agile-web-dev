@@ -7,8 +7,8 @@ describe('bddApp Routes', function(){
 		$route = $injector.get('$route');
 	}));
 	afterEach(function(){
-	  $httpBackend.verifyNoOutstandingExpectation();
-	  $httpBackend.verifyNoOutstandingRequest();
+		$httpBackend.verifyNoOutstandingExpectation();
+		$httpBackend.verifyNoOutstandingRequest();
 	});
 	it('should load the home page on successful load of /', inject(function($httpBackend, $location, $rootScope, $route) {
 		$httpBackend.expectGET('partials/home.html').respond(200, 'main HTML');
