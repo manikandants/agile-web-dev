@@ -1,5 +1,21 @@
 (function () {
    'use strict';
+   var paths = {
+		js: [
+			'*.js',
+			'Gruntfile.js',
+			'www/**/*.js',
+			'test/**/*.js',
+			'!www/js/libs/**/*.js',
+			'!test/libs/*.js'
+		],
+		html: [
+			'www/**/*.html'
+		],
+		css: [
+			'www/**/*.css'
+		]
+	};
 	module.exports = function(grunt){
 		var config = {};
 		config.pkg = grunt.file.readJSON('package.json');
@@ -15,7 +31,48 @@
 				}]
 			}
 		};
-
+        config.watch = {
+            js: {
+                files: paths.js,
+                tasks: ['jshint'],
+                options: {
+                    livereload: true
+                }
+            },
+            html: {
+                files: paths.html,
+                options: {
+                    livereload: true,
+                    interval: 500
+                }
+            },
+            css: {
+                files: paths.css,
+                tasks: ['csslint'],
+                options: {
+                    livereload: true
+                }
+            }
+        };
+		config.nodemon = {
+            dev: {
+                script: 'server.js',
+                options: {
+                    args: [],
+                    ignore: ['node_modules/**'],
+                    ext: 'js,html',
+                    nodeArgs: ['--debug'],
+                    delayTime: 1,
+                    cwd: __dirname
+                }
+            }
+        };
+        config.concurrent = {
+            tasks: ['nodemon', 'watch'],
+            options: {
+                logConcurrentOutput: true
+            }
+        };
 		config.htmlmin = {
 			build: {
 				options: {
@@ -33,6 +90,16 @@
 			}
 		};
 		
+		config.jshint = {
+            all: {
+                src: paths.js,
+                options: {
+                    jshintrc: true
+                }
+
+            }
+        };
+		
 		config.csslint = {
 			options: {
 				csslintrc: '.csslintrc',
@@ -45,18 +112,18 @@
 				options: {
 					import: 2
 				},
-				src: ['www/**/*.css']
+				src: paths.css
 			},
 			lax: {
 				options: {
 					import: false
 				},
-				src: ['www/**/*.css']
+				src: paths.css
 			}
 		};
 		
 		config.jscs = {
-			src: ['Gruntfile.js', 'www/**/*.js', 'test/**/*.js', '!www/js/libs/**/*.js', '!test/libs/*.js'],
+			src: paths.js,
 			options: {
 				config: ".jscsrc",
 				reporter: 'checkstyle',
@@ -113,7 +180,7 @@
 		config.plato = {
 			all:{
 				files: {
-					'reports/plato': ['Gruntfile.js', 'www/**/*.js', 'test/**/*.js', '!www/js/libs/**/*.js', '!test/libs/*.js']
+					'reports/plato': paths.js
 				}
 			}
 		};
@@ -139,7 +206,8 @@
 			'concat',
 			'uglify',
 			'rev',
-			'usemin'
+			'usemin',
+			'concurrent'
 		];
 
 		grunt.registerTask("default", tasks);
