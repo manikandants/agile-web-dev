@@ -4,7 +4,7 @@
   "description": "Agile web development",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS test/karma.conf.js"
+    "test": "karma start --single-run --browsers PhantomJS test/karma.conf.js"
   },
   "repository": {
     "type": "git",
