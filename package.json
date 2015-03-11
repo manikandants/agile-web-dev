@@ -1,19 +1,19 @@
 {
-  "name": "bdd",
+  "name": "agile-web-dev",
   "version": "0.0.1",
-  "description": "Behavior driven development",
+  "description": "Agile web development",
   "main": "server.js",
   "scripts": {
     "test": "karma start test/karma.conf.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://manikandants@bitbucket.org/manikandants/bdd.git"
+    "url": "https://github.com/manikandants/agile-web-dev.git"
   },
   "keywords": [
     "bdd"
   ],
-  "author": "Manikandan TS",
+  "author": "Manikandan TS <manikandan.citeee@gmail.com>",
   "license": "Open",
   "dependencies": {
     "body-parser": "^1.10.2",
