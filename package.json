@@ -1,6 +1,6 @@
 {
   "name": "agile-web-dev",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Agile web development",
   "main": "server.js",
   "scripts": {
