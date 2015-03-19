@@ -4,7 +4,7 @@ bddApp.service('calculatorService', function(){
 			if(parseFloat(operand1) && parseFloat(operand2)){
 				return parseFloat(operand1) + parseFloat(operand2);
 			}else{
-				return 0;
+				//return 0;
 			}
 		}else{
 			return 0;
