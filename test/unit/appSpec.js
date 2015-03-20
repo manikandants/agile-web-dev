@@ -1,4 +1,4 @@
-describe('bddApp Routes', function(){
+describe('bddApp Routes', function() {
 	beforeEach(angular.mock.module('bddApp'));
 	beforeEach(inject(function($injector) {
 		$httpBackend = $injector.get('$httpBackend');
@@ -6,7 +6,7 @@ describe('bddApp Routes', function(){
 		$rootScope = $injector.get('$rootScope');
 		$route = $injector.get('$route');
 	}));
-	afterEach(function(){
+	afterEach(function() {
 		$httpBackend.verifyNoOutstandingExpectation();
 		$httpBackend.verifyNoOutstandingRequest();
 	});

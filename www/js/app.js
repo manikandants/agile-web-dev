@@ -2,9 +2,9 @@ var bddApp = angular.module('bddApp', [
 	'ngRoute'
 ]);
 
-bddApp.config(['$routeProvider',function($routeProvider){
+bddApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
-	when('/',{
+	when('/', {
 		templateUrl : 'partials/home.html',
 		controller : 'homeController'
 	});

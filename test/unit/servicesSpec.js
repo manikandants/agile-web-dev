@@ -1,11 +1,11 @@
-describe('bddApp Services -->', function(){
-	describe('calculatorService -->', function(){
+describe('bddApp Services -->', function() {
+	describe('calculatorService -->', function() {
 		beforeEach(angular.mock.module('bddApp'));
 		var calculatorService;
 		beforeEach(inject(function($injector) {
 			calculatorService = $injector.get('calculatorService');
 		}));
-		describe('Whole Numbers -->', function(){
+		describe('Whole Numbers -->', function() {
 			it('should add two positive numbers', inject(function() {
 				var operand1 = 1;
 				var operand2 = 1;
@@ -25,7 +25,7 @@ describe('bddApp Services -->', function(){
 				expect((calculatorService.add(operand1, operand2))).toBe(result);
 			}));
 		});
-		describe('Floating Points and Strings -->', function(){
+		describe('Floating Points and Strings -->', function() {
 			it('should add two floating point numbers', inject(function() {
 				var operand1 = 100.12;
 				var operand2 = 123.34;
@@ -45,15 +45,15 @@ describe('bddApp Services -->', function(){
 				expect((calculatorService.add(operand1, operand2))).toBe(result);
 			}));
 		});
-		describe('Boundary Cases -->', function(){
+		describe('Boundary Cases -->', function() {
 			it('should return zero if two Strings are added', inject(function() {
-				var operand1 = "mani";
-				var operand2 = "kandan";
+				var operand1 = 'mani';
+				var operand2 = 'kandan';
 				var result = 0;
 				expect((calculatorService.add(operand1, operand2))).toBe(result);
 			}));
 			it('should return zero if a string and number are added', inject(function() {
-				var operand1 = "mani";
+				var operand1 = 'mani';
 				var operand2 = -10;
 				var result = 0;
 				expect((calculatorService.add(operand1, operand2))).toBe(result);

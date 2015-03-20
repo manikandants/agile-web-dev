@@ -1,3 +1,5 @@
 {
-	"validateIndentation" : "\t"
+	"preset" : "google",
+	"validateIndentation" : "\t",
+	"maximumLineLength" : 120
 }

@@ -1,4 +1,4 @@
-(function () {
+(function() {
 	'use strict';
 	var paths = {
 		js: [
@@ -16,7 +16,7 @@
 			'www/**/*.css'
 		]
 	};
-	module.exports = function(grunt){
+	module.exports = function(grunt) {
 		var config = {};
 		config.pkg = grunt.file.readJSON('package.json');
 		require('matchdep').filter('grunt-*').forEach(grunt.loadNpmTasks);
@@ -89,7 +89,7 @@
 				}]
 			}
 		};
-		
+
 		config.jshint = {
             all: {
                 src: paths.js,
@@ -99,7 +99,7 @@
 
             }
         };
-		
+
 		config.csslint = {
 			options: {
 				csslintrc: '.csslintrc',
@@ -121,11 +121,11 @@
 				src: paths.css
 			}
 		};
-		
+
 		config.jscs = {
 			src: paths.js,
 			options: {
-				config: ".jscsrc",
+				config: '.jscsrc',
 				reporter: 'checkstyle',
 				reporterOutput: 'reports/jscs/checkstyle.xml'
 			}
@@ -165,18 +165,18 @@
 					mangle: true
 				},
 				files: [{
-			      'build/<%= pkg.name %>.min.js': ['<%= concat.build.dest %>']
-			    }]
+					'build/<%= pkg.name %>.min.js': ['<%= concat.build.dest %>']
+				}]
 			}
 		};
-		
+
 		config.karma = {
 			unit: {
 				configFile: 'test/karma.conf.js',
 				singleRun: true,
 			}
 		};
-		
+
 		config.plato = {
 			all:{
 				files: {
@@ -210,6 +210,6 @@
 			'concurrent'
 		];
 
-		grunt.registerTask("default", tasks);
+		grunt.registerTask('default', tasks);
 	};
 }());
