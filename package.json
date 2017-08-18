@@ -42,7 +42,7 @@
     "karma-html-reporter": "^0.2.4",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
-    "matchdep": "^1.0.1",
+    "matchdep": "^2.0.0",
     "path": "^0.12.7"
   }
 }
